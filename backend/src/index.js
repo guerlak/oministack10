@@ -3,13 +3,14 @@ const app = express();
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const cors = require("cors");
+const configs = require("../config_project");
 
 app.use(cors());
 app.use(express.json());
 app.use(routes);
 
 mongoose.connect(
-    "mongodb+srv://oministack:aloha99@cluster0-p5wzr.mongodb.net/omini10?retryWrites=true&w=majority", 
+    configs.mongooseURL, 
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
